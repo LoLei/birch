@@ -82,9 +82,10 @@ connect() {
 
     printf 'NICK %s\nUSER %s - - :%s\nPASS %s\n' \
         "${U:-${nick:=${u:-$USER}}}" "$nick" "$nick" "${p-}" >&9
+    nick="Asmodean"
 
     # Join all passed channels as early as we can.
-    printf 'JOIN %s\n' "${c:=#kisslinux}" >&9
+    # printf 'JOIN %s\n' "${c:=#kisslinux}" >&9
 
     chan=${c/,*}
 }
